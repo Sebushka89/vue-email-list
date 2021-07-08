@@ -13,7 +13,7 @@
 
 
     <div id="app">
-        <div v-for="email in emails">{{email}}</div>
+        <div v-for="email in emails" v-if="emails.length == 10">{{email}}</div>
         <button @click="getEmail()">Genera Email</button>
     </div>
 

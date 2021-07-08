@@ -1,10 +1,10 @@
 Vue.config.devtools = true;
 
 
-// Chiamare l'api per poter generare un numero randomico (che ci restuisce il backend)
-// e mostrare questo numero a schermo.
-
-// => dobbiamo popolare un data (che all'inizio è 0), e mostrarlo a schermo {{ number }}
+/* Descrizione:
+Attraverso l’apposita API di Boolean https://flynn.boolean.careers/exercises/api/random/mail generare 10 indirizzi email e stamparli in pagina all’interno di una lista.
+Bonus
+Far comparire gli indirizzi email solamente quando sono stati tutti generati. */
 
 new Vue(
     {
@@ -16,6 +16,7 @@ new Vue(
         methods: {
 
             getEmail: function () {
+                for(let i=0; i<10; i++)
                 axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
                 .then((response) => {  // appena il server ci risponde, si attiva questa funzione
                     this.emails.push(response.data.response);
